@@ -1,0 +1,23 @@
+2015-05-12 21:11:11 [ Thread-2:154212 ] - [ INFO ]  Closing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Tue May 12 21:08:36 CST 2015]; root of context hierarchy
+2015-05-12 21:56:58 [ main:0 ] - [ INFO ]  FrameworkServlet 'dispatcherServlet': initialization started
+2015-05-12 21:56:58 [ main:21 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Tue May 12 21:56:58 CST 2015]; root of context hierarchy
+2015-05-12 21:56:58 [ main:51 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/bench4qweb-servlet.xml]
+2015-05-12 21:56:58 [ main:290 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-12 21:56:58 [ main:639 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String fengyun.redis.twitter.application.TwitterApplilcation.home()
+2015-05-12 21:56:58 [ main:640 ] - [ INFO ]  Mapped "{[//post/all],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<fengyun.redis.twitter.domain.Post> fengyun.redis.twitter.application.TwitterApplilcation.allPosts(java.lang.String)
+2015-05-12 21:56:58 [ main:640 ] - [ INFO ]  Mapped "{[//user/authorize],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String fengyun.redis.twitter.application.TwitterApplilcation.login(java.lang.String,java.lang.String)
+2015-05-12 21:56:58 [ main:640 ] - [ INFO ]  Mapped "{[//post/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public boolean fengyun.redis.twitter.application.TwitterApplilcation.post(java.lang.String,java.lang.String)
+2015-05-12 21:56:58 [ main:640 ] - [ INFO ]  Mapped "{[//user/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public boolean fengyun.redis.twitter.application.TwitterApplilcation.register(java.lang.String,int,java.lang.String)
+2015-05-12 21:56:59 [ main:907 ] - [ INFO ]  FrameworkServlet 'dispatcherServlet': initialization completed in 906 ms
+2015-05-12 22:00:02 [ Thread-2:183766 ] - [ INFO ]  Closing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Tue May 12 21:56:58 CST 2015]; root of context hierarchy
+2015-05-12 22:00:15 [ main:0 ] - [ INFO ]  FrameworkServlet 'dispatcherServlet': initialization started
+2015-05-12 22:00:15 [ main:19 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Tue May 12 22:00:15 CST 2015]; root of context hierarchy
+2015-05-12 22:00:15 [ main:48 ] - [ INFO ]  Loading XML bean definitions from ServletContext resource [/WEB-INF/bench4qweb-servlet.xml]
+2015-05-12 22:00:15 [ main:292 ] - [ INFO ]  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-12 22:00:15 [ main:549 ] - [ INFO ]  Mapped "{[/],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String fengyun.redis.twitter.application.TwitterApplilcation.home()
+2015-05-12 22:00:15 [ main:549 ] - [ INFO ]  Mapped "{[//post/all],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<fengyun.redis.twitter.domain.Post> fengyun.redis.twitter.application.TwitterApplilcation.allPosts(java.lang.String)
+2015-05-12 22:00:15 [ main:549 ] - [ INFO ]  Mapped "{[//user/authorize],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String fengyun.redis.twitter.application.TwitterApplilcation.login(java.lang.String,java.lang.String)
+2015-05-12 22:00:15 [ main:549 ] - [ INFO ]  Mapped "{[//post/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public boolean fengyun.redis.twitter.application.TwitterApplilcation.post(java.lang.String,java.lang.String)
+2015-05-12 22:00:15 [ main:550 ] - [ INFO ]  Mapped "{[//user/register],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public boolean fengyun.redis.twitter.application.TwitterApplilcation.register(java.lang.String,int,java.lang.String)
+2015-05-12 22:00:16 [ main:1071 ] - [ INFO ]  FrameworkServlet 'dispatcherServlet': initialization completed in 1071 ms
+2015-05-12 22:00:39 [ Thread-2:23795 ] - [ INFO ]  Closing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Tue May 12 22:00:15 CST 2015]; root of context hierarchy
