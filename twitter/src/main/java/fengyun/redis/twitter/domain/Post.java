@@ -73,13 +73,19 @@ public class Post {
 	public Post() {
 	}
 
-	public Post(Long id, String content, Long userId, Long replyUserId,
-			Long replyPostId) {
+	// Construct a post with replyUserId and replyPostId
+	public Post(Long id, String content, Long userId, Long replyToUserId,
+			Long topicPost) {
 		this.setContent(content);
 		this.setId(id);
 		this.setUserId(userId);
-		this.setReplyPostid(replyPostId);
-		this.setReplyUserId(replyUserId);
+		this.setReplyPostid(topicPost);
+		this.setReplyUserId(replyToUserId);
 		this.setTime(new Date().getTime());
+	}
+
+	// Construct a post without replyUserId and replyPostId
+	public Post(Long id, String content, Long userId) {
+		this(id, content, userId, null, null);
 	}
 }

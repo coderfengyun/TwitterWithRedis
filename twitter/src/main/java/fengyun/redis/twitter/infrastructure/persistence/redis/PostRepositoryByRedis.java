@@ -20,7 +20,7 @@ public class PostRepositoryByRedis extends AbstractRedisRepsitory<Post, Long>
 	}
 
 	@Override
-	public List<Post> findAllBy(Long userId) {
+	public List<Post> findAllByUserId(Long userId) {
 		return this.findAllByIndexKey(toPostUserIdRedisKey(userId));
 	}
 

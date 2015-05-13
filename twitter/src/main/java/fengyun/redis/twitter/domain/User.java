@@ -86,4 +86,9 @@ public class User {
 	public String authorize() {
 		return this.getName();
 	}
+
+	public boolean follow(Long targetUserId) {
+		
+		return true;
+	}
 }

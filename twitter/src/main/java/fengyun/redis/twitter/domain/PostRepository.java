@@ -6,7 +6,7 @@ import java.util.Optional;
 public interface PostRepository {
 	Optional<Post> findBy(Long id);
 
-	List<Post> findAllBy(Long userId);
+	List<Post> findAllByUserId(Long userId);
 
 	void store(Post post);
 

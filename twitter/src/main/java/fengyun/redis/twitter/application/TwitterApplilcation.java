@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,8 +43,12 @@ public class TwitterApplilcation {
 	@RequestMapping(value = "user/register")
 	@ResponseBody
 	public boolean register(@RequestParam String userName,
-			@RequestParam int age, @RequestParam String password) {
-		this.userRepository.store(new User(1L, userName, age, password));
+			@RequestParam(required = false) Integer age,
+			@RequestParam String password) {
+		Long currentId = this.userRepository.generateId();
+		System.out.println("Current user id is " + currentId);
+		this.userRepository.store(new User(currentId, userName, age == null ? 0
+				: age, password));
 		return true;
 	}
 
@@ -51,16 +56,35 @@ public class TwitterApplilcation {
 	@ResponseBody
 	public boolean post(@RequestParam String content,
 			@RequestParam String userName) {
-		this.postRepository.store(new Post(this.postRepository.generateId(),
-				content, this.userRepository.findBy(userName).get().getId(),
-				null, null));
+		Long currentId = this.postRepository.generateId();
+		System.out.println(currentId);
+		this.postRepository.store(new Post(currentId, content,
+				this.userRepository.findBy(userName).get().getId()));
 		return true;
+	}
+
+	@RequestMapping(value = "post/reply/{topicPostId}/{replyToUserId}")
+	@ResponseBody
+	public boolean reply(@RequestParam String content,
+			@RequestParam String userName, @PathVariable Long replyToUserId,
+			@PathVariable Long topicPostId) {
+		Long postId = this.postRepository.generateId();
+		System.out.println(postId);
+		this.postRepository.store(new Post(postId, content, this.userRepository
+				.findBy(userName).get().getId(), replyToUserId, topicPostId));
+		return true;
+	}
+
+	@RequestMapping(value = "pos/relatives/{topicPostId}")
+	@ResponseBody
+	public List<Post> allRelativePosts(@PathVariable Long topicPostId) {
+		return this.postRepository.findAllByUserId(topicPostId);
 	}
 
 	@RequestMapping(value = "post/all")
 	@ResponseBody
 	public List<Post> allPosts(@RequestParam String userName) {
 		Long userId = this.userRepository.findBy(userName).get().getId();
-		return this.postRepository.findAllBy(userId);
+		return this.postRepository.findAllByUserId(userId);
 	}
 }

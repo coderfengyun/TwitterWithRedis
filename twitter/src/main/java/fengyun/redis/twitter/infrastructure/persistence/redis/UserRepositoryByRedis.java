@@ -11,6 +11,7 @@ import fengyun.redis.twitter.domain.UserRepository;
 public class UserRepositoryByRedis extends AbstractRedisRepsitory<User, Long>
 		implements UserRepository {
 
+	private static final String IDGENERATOR_USER = "idgenerator:user";
 	private static final String USER_PREFIX = "user:";
 	private static final String USER_NAME_INDEX_KEY_PREFIX = "user:name:";
 
@@ -61,7 +62,7 @@ public class UserRepositoryByRedis extends AbstractRedisRepsitory<User, Long>
 	}
 
 	String getIdGeneratorKey() {
-		return "idgenerator:user";
+		return IDGENERATOR_USER;
 	}
 
 }

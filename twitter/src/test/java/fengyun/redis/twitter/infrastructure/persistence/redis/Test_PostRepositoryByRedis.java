@@ -17,9 +17,9 @@ public class Test_PostRepositoryByRedis {
 		Long userId = this.userRepos.findBy("testAdd").get().getId();
 		Post underAdd = new Post(postRepo.generateId(), "testAddPost", userId,
 				null, null);
-		int beforeAddSize = this.postRepo.findAllBy(userId).size();
+		int beforeAddSize = this.postRepo.findAllByUserId(userId).size();
 		this.postRepo.store(underAdd);
-		int afterAddSize = this.postRepo.findAllBy(userId).size();
+		int afterAddSize = this.postRepo.findAllByUserId(userId).size();
 		assertEquals(beforeAddSize + 1, afterAddSize);
 	}
 }

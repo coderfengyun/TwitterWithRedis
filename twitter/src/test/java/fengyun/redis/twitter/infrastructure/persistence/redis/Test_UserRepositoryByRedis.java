@@ -7,10 +7,9 @@ import java.util.Optional;
 import org.junit.Test;
 
 import fengyun.redis.twitter.domain.User;
-import fengyun.redis.twitter.domain.UserRepository;
 
 public class Test_UserRepositoryByRedis {
-	UserRepository userRepo = new UserRepositoryByRedis();
+	UserRepositoryByRedis userRepo = new UserRepositoryByRedis();
 
 	@Test
 	public void testAdd() {
